@@ -1,6 +1,7 @@
 package franxx.code.record.data;
 
-public record Customer(String id, String name, String email) {
+public record Customer(String id, String name, String email)
+        implements Hello {
 
     public Customer(String id, String name, String email) {
         System.out.println("Create Customer");
@@ -17,6 +18,7 @@ public record Customer(String id, String name, String email) {
         this(id, null, null);
     }
 
+    @Override
     public String hello(String name) {
         return "Good Morning: " + name + ", my name is: " + this.name;
     }

@@ -21,7 +21,7 @@ class CustomerTest {
         System.out.println(customer);
 
         assertEquals("1", customer.id());
-        assertEquals("Mee", customer.name());
+        assertEquals("MEE", customer.name());
     }
 
     @Test
@@ -32,7 +32,7 @@ class CustomerTest {
         System.out.println(customer);
 
         assertEquals("1", customer.id());
-        assertEquals("Mee", customer.name());
+        assertEquals("MEE", customer.name());
 
         assertNull(customer.email());
     }
