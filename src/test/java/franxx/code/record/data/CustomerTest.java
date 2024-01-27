@@ -62,4 +62,15 @@ class CustomerTest {
         assertEquals("Good Morning: Zero, my name is: MEE", customer.hello("Zero"));
     }
 
+    @Test
+    void recordEqual() {
+
+        Customer customer1 = new Customer("SAMSUNG", "Mee", "LOCAL@HOST");
+        Customer customer2 = new Customer("SAMSUNG", "Mee", "LOCAL@HOST");
+
+        assertTrue(customer2.equals(customer1));
+        assertEquals(customer1.hashCode(), customer2.hashCode());
+        assertEquals(customer1.toString(), customer2.toString());
+
+    }
 }
