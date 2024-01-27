@@ -23,4 +23,32 @@ class CustomerTest {
         assertEquals("1", customer.id());
         assertEquals("Mee", customer.name());
     }
+
+    @Test
+    void constructor() {
+
+        Customer customer = new Customer("1", "Mee");
+        assertNotNull(customer);
+        System.out.println(customer);
+
+        assertEquals("1", customer.id());
+        assertEquals("Mee", customer.name());
+
+        assertNull(customer.email());
+    }
+
+
+    @Test
+    void canonicalConstructor() {
+
+        Customer customer = new Customer("SAMSUNG", "Mee", "LOCAL@HOST");
+        assertNotNull(customer);
+        System.out.println(customer);
+
+        assertEquals("samsung", customer.id());
+        assertEquals("MEE", customer.name());
+        assertEquals("local@host", customer.email());
+
+        assertNotNull(customer.email());
+    }
 }
