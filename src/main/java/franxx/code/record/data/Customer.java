@@ -16,4 +16,8 @@ public record Customer(String id, String name, String email) {
     public Customer(String id) {
         this(id, null, null);
     }
+
+    public String hello(String name) {
+        return "Good Morning: " + name + ", my name is: " + this.name;
+    }
 }

@@ -51,4 +51,15 @@ class CustomerTest {
 
         assertNotNull(customer.email());
     }
+
+    @Test
+    void recordMethod() {
+
+        Customer customer = new Customer("SAMSUNG", "Mee", "LOCAL@HOST");
+        assertNotNull(customer);
+        System.out.println(customer);
+
+        assertEquals("Good Morning: Zero, my name is: MEE", customer.hello("Zero"));
+    }
+
 }
