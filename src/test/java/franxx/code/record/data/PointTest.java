@@ -38,7 +38,28 @@ class PointTest {
         assertNotNull(Point.class.getDeclaredMethod("y").getAnnotation(Valid.class));
 
         assertNotNull(Point.class.getConstructors()[0].getParameters()[0].getAnnotation(Valid.class));
-        assertNotNull(Point.class.getConstructors()[0].getParameters()[1].getAnnotation(Valid.class));
 
+        assertNotNull(Point.class.getConstructors()[0].getParameters()[1].getAnnotation(Valid.class));
+    }
+
+    public void printOb(Object object) {
+        if (object instanceof Line(Point(int sX, int sY), Point(int eX, int eY))) {
+            System.out.println(sX);
+            System.out.println(sY);
+
+            System.out.println(eX);
+            System.out.println(eY);
+        } else if (object instanceof Point(int x, int y)) {
+            System.out.println(x);
+            System.out.println(y);
+        } else {
+            System.out.println(object);
+        }
+    }
+
+    @Test
+    void beforeRecordPattern() {
+        printOb(new Point(10, 10));
+        printOb(new Line(new Point(10, 10), new Point(20, 20)));
     }
 }
