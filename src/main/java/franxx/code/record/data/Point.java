@@ -1,6 +1,8 @@
 package franxx.code.record.data;
 
-public record Point(int x, int y) {
+import franxx.code.record.annotations.Valid;
+
+public record Point(@Valid int x, @Valid int y) {
 
     public Point {
         System.out.println("create point");
